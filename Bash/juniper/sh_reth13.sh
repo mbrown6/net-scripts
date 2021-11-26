@@ -20,10 +20,10 @@ commands="show interfaces terse | match ^reth[13]\.0"
 
 # Loop through devices var, use sshpass to store secret.
 # SSH -o(options) No fingerprinting, timeout 4sec (optimize for unresponsive targets)
-for i in ${devices}; do
+for device in ${devices}; do
 
-    echo "Connecting to device: ${i}"
-    sshpass -p$passWord ssh -o StrictHostKeyChecking=no -o ConnectTimeout=4 $userName@${i} ${commands}
+    echo "Connecting to device: ${device}"
+    sshpass -p$passWord ssh -o StrictHostKeyChecking=no -o ConnectTimeout=4 $userName@${device} ${commands}
     echo "============================================================="
 
 done

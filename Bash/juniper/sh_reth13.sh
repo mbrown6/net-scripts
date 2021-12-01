@@ -7,7 +7,7 @@
 # Uses textfile test1.txt which is a list of host IP addresses
 
 # Load host IPs into devices var
-devices=$(cat test1.txt)
+devices=$(cat test2.txt)
 
 # Prompt for user name, -p switch prints prompt text
 read -p  "Enter user name: " userName

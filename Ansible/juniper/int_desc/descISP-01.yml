@@ -29,7 +29,7 @@
 
     - name: Save device information using template
       template:
-        src: ~/git_wework/net-scripts/Ansible/templates/reth1-description.j2
+        src: ~/git_wework/net-scripts/Ansible/juniper/templates/reth01-description.j2
         dest: "{{ conf_file }}"
 
     - name: Install generated configuration file onto device
@@ -42,5 +42,5 @@
           timeout: 120
         src: "{{ conf_file }}"
         load: set 
-        comment: "[Add ISP description][reth1.0 interface only]"
+        comment: "[Add ISP description][reth0.0 and reth1.0 interfaces]"
 

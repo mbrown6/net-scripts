@@ -29,7 +29,7 @@
 
     - name: Save device information using template
       template:
-        src: ~/git_wework/net-scripts/Ansible/templates/reth13-description.j2
+        src: ~/git_wework/net-scripts/Ansible/juniper/templates/reth13-description.j2
         dest: "{{ conf_file }}"
 
     - name: Install generated configuration file onto device

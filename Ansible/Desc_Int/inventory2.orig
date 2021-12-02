@@ -1,0 +1,33 @@
+[usc-cores]
+nsh02-core	ansible_host=10.187.250.1	isp1=Comcast	isp2=ATT
+nsh03-core	ansible_host=10.179.250.1	isp1=Cogent	isp2=Lumen
+bna4-core	ansible_host=10.216.74.1	isp1=Comcast	isp2=ATT
+bos04-core	ansible_host=10.126.250.1	isp1=Cogent	isp2=Lightower/CrownCastle
+bos05-core	ansible_host=10.132.250.1	isp1=Verizon	isp2=Lightower/CrownCastle
+bos06-core	ansible_host=10.204.10.1	isp1=Verizon	isp2=Comcast
+bos07-core	ansible_host=10.221.10.1	isp1=Verizon	isp2=Lightower/CrownCastle
+bos08-core	ansible_host=10.209.74.1	isp1=Cogent	isp2=Verizon
+bos09-core	ansible_host=10.107.10.1	isp1=Lightower/CrownCastle	isp2=Verizon
+bos11-core	ansible_host=10.207.74.1	isp1=Comcast	isp2=Verizon
+bos12-core	ansible_host=10.186.138.1	isp1=Verizon	isp2=Comcast
+bos13-core	ansible_host=10.213.74.1	isp1=Lightower/CrownCastle	isp2=Lumen
+bos18-core	ansible_host=10.211.85.255	isp1=Cogent	isp2=Lightower/CrownCastle
+bos22-core	ansible_host=10.133.10.1	isp1=Cogent	isp2=Lightower/CrownCastle
+bos24-core	ansible_host=10.234.202.1	isp1=Comcast	isp2=Verizon
+bos25-core	ansible_host=10.235.202.1	isp1=Lightower/CrownCastle	isp2=Cogent
+bos28-core	ansible_host=10.218.202.1	isp1=Lightower/CrownCastle	isp2=Cogent
+chi01-core	ansible_host=10.36.250.1	isp1=Comcast	isp2=ATT
+chi04-core	ansible_host=10.88.250.1	isp1=Verizon	isp2=ATT
+chi06-core	ansible_host=10.91.250.1	isp1=Verizon	isp2=Zayo
+chi08-core	ansible_host=10.198.74.1	isp1=Cogent	isp2=Zayo
+chi09-core	ansible_host=10.193.74.1	isp1=Cogent	isp2=Lumen
+chi10-core	ansible_host=10.174.138.1	isp1=Cogent	isp2=Zayo
+chi13-core	ansible_host=10.197.138.1	isp1=Cogent	isp2=Lightower/CrownCastle
+chi14-core	ansible_host=10.214.74.1	isp1=ATT	isp2=SilverIP
+chi16-core	ansible_host=10.196.138.1	isp1=Comcast	isp2=ATT
+clt01-core	ansible_host=10.151.250.1	isp1=ATT	isp2=Lumen
+clt03-core	ansible_host=10.85.138.1	isp1=Lumen	isp2=Cogent
+clt04-core	ansible_host=10.203.138.1	isp1=Spectrum	isp2=ATT
+
+[all:vars]
+ansible_python_interpreter=/usr/local/bin/python

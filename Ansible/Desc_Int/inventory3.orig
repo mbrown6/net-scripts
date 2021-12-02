@@ -1,0 +1,7 @@
+[usc-cores]
+bna5-core	ansible_host=10.249.196.1	isp1=Comcast
+bos10-core	ansible_host=10.249.193.1	isp1=Comcast
+
+
+[all:vars]
+ansible_python_interpreter=/usr/local/bin/python

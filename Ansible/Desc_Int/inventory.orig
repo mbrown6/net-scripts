@@ -1,0 +1,21 @@
+[usc-cores]
+atl01-core  ansible_host=10.72.250.1    isp1=Zayo   isp2=Verizon
+atl03-core  ansible_host=10.155.250.1   isp1=Verizon    isp2=Cogent
+atl04-core  ansible_host=10.220.10.1    isp1=Verizon    isp2=Cogent
+atl05-core  ansible_host=10.154.138.1   isp1=ATT isp2=Zayo
+atl07-core  ansible_host=10.154.10.1    isp1=Comcast    isp2=ATT
+atl08-core  ansible_host=10.142.149.255 isp1=Comcast    isp2=Lumen
+atl10-core  ansible_host=10.229.213.255 isp1=Comcast    isp2=Lightower/CrownCastle
+atl11-core  ansible_host=10.241.213.255 isp1=Zayo   isp2=Comcast
+atl12-core  ansible_host=10.246.213.255 isp1=Comcast    isp2=Comcast
+atl13-core  ansible_host=10.143.149.255 isp1=Lightower/CrownCastle  isp2=Comcast
+aus01-core  ansible_host=10.24.250.1    isp1=Verizon    isp2=Spectrum
+aus02-core  ansible_host=10.71.250.1    isp1=Verizon    isp2=Lumen
+aus04-core  ansible_host=10.109.250.1   isp1=Verizon    isp2=Spectrum
+aus06-core  ansible_host=10.233.10.1    isp1=Spectrum   isp2=ATT
+aus07-core  ansible_host=10.253.138.1   isp1=ATT    isp2=Logix
+aus09-core  ansible_host=10.85.202.1    isp1=Spectrum   isp2=Logix
+aus10-core  ansible_host=10.78.213.255  isp1=Lightower/CrownCastle  isp2=Lumen
+
+[all:vars]
+ansible_python_interpreter=/usr/local/bin/python

@@ -1,5 +1,6 @@
-[usc-cores]
-chi03-core	ansible_host=10.55.250.1	isp1=Verizon	isp2=ATT
+[emea-cores]
+tlv01-core	ansible_host=10.26.250.1	isp1=BezeqInt	isp2=NetvisionNetwork
+
 
 [all:vars]
 ansible_python_interpreter=/usr/local/bin/python

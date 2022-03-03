@@ -1,0 +1,3 @@
+hostname,ip_addr,port,device_type
+ams02-core,10.23.250.1,22,juniper_junos
+ams03-core,10.85.10.1,22,juniper_junos

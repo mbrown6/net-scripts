@@ -1,0 +1,35 @@
+[emea-cores]
+auh1-core	ansible_host=10.20.10.1	isp1=Du
+bcn7-core	ansible_host=10.9.10.1	isp1=Colt
+ber3-core	ansible_host=10.194.10.1	isp1=Colt
+ber5-core	ansible_host=10.197.10.1	isp1=Colt
+ber9-core	ansible_host=10.174.10.1	isp1=Colt
+bhx2-core	ansible_host=10.227.10.1	isp1=Vorboss
+dub01-core	ansible_host=10.247.10.1	isp1=Colt
+dub12-core	ansible_host=10.230.10.1	isp1=Colt
+dub9-core	ansible_host=10.8.10.1	isp1=Colt
+fra1-core	ansible_host=10.207.10.1	isp1=Colt
+fra2-core	ansible_host=10.137.74.1	isp1=Colt
+ham1-core	ansible_host=10.188.250.1	isp1=Colt
+ham2-core	ansible_host=10.130.74.1	isp1=Colt
+ham3-core	ansible_host=10.14.10.1	isp1=Colt
+lon27-core	ansible_host=10.142.250.1	isp1=Luminet
+lon54-core	ansible_host=10.3.10.1	isp1=Colt
+lon71-core	ansible_host=10.0.10.1	isp1=Colt
+lon73-core	ansible_host=10.58.10.1	isp1=Interdsl
+mil6-core	ansible_host=10.69.10.1	isp1=Colt
+muc01-core	ansible_host=10.192.10.1	isp1=Colt
+muc02-core	ansible_host=10.190.10.1	isp1=Colt
+muc03-core	ansible_host=10.94.10.1	isp1=Colt
+muc4-core	ansible_host=10.70.10.1	isp1=Colt
+osl02-core	ansible_host=10.82.10.1	isp1=Tele2
+par14-core	ansible_host=10.76.10.1	isp1=Colt
+par18-core	ansible_host=10.36.10.1	isp1=Colt
+par21-core	ansible_host=10.50.10.1	isp1=Colt
+par31-core	ansible_host=10.62.10.1	isp1=Colt
+tlv07-core	ansible_host=10.98.10.1	isp1=BezeqInt
+waw02-core	ansible_host=10.247.74.1	isp1=Vorboss
+
+
+[all:vars]
+ansible_python_interpreter=/usr/local/bin/python

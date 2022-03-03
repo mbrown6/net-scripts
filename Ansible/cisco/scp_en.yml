@@ -1,0 +1,20 @@
+---
+- name: Add SCP server enable command to Cisco Cat9k switches
+  hosts: Cisco
+  gather_facts: False
+    #  connection: network_cli
+
+  tasks:
+    - name: Add SCP command and save running-config to startup-config
+      ios_config:
+        lines:
+        - ip scp server enable 
+      register: output
+
+    - name: Save running-config to startup-config when config is modified
+      ios_config:
+        save_when: modified
+
+    - name: print output
+      debug:
+        var: output

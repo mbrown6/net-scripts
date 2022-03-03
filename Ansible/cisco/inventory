@@ -1,0 +1,6 @@
+[cisco_9k_usc]
+BOS24-5a ansible_host=10.234.202.50
+
+
+[all:vars]
+ansible_python_interpreter=/usr/local/bin/python

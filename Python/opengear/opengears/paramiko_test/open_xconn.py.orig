@@ -1,0 +1,48 @@
+import paramiko
+import time
+import getpass
+
+ssh_client = paramiko.SSHClient()
+print(type(ssh_client))
+
+ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+#ssh_client.connect(hostname='65.210.152.86', port='22', username='svcconsole', password='5wdD0;YhAX}4rB8yPy',
+#                   look_for_keys=False, allow_agent=False)
+
+passwd = getpass.getpass('Enter password: ')
+device = {'hostname': '65.210.152.86',
+           'port': '22',
+           'username': 'svcconsole',
+           'password': passwd,
+           }
+
+print(f'Connecting to {device["hostname"]}')
+
+ssh_client.connect(**device, look_for_keys=False, allow_agent=False)
+
+shell = ssh_client.invoke_shell()
+shell.send('uname -n\n')
+time.sleep(1)
+
+output = shell.recv(10000)
+print(type(output))
+
+output = output.decode('utf-8')
+print(output)
+
+shell.send('config -s config.system.name=atl1-console\n')
+shell.send('config -r systemsettings\n')
+shell.send('uname -n\n')
+time.sleep(1)
+
+output2 = shell.recv(10000)
+output2 = output2.decode('utf-8')
+print(output2)
+
+#print(ssh_client.get_transport().is_active())
+
+# sending commands
+
+if ssh_client.get_transport().is_active() == True:
+    print('Closing connection')
+    ssh_client.close()

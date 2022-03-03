@@ -1,0 +1,45 @@
+---
+- name: Update RADIUS server configuration 
+  hosts: Cisco
+  gather_facts: False
+    #  connection: network_cli
+
+  tasks:
+    - name: Delete AAA and RADIUS configuration
+      ios_config:
+        lines:
+        - no aaa authentication login default local group radius
+        - no aaa authorization exec default local group radius 
+        - no aaa authentication login default group radius local
+        - no aaa authorization exec default group radius local 
+        - no aaa group server radius wework
+        - no radius server nyc128-radius01
+        - no radius server nyc128-radius02 
+        - no radius server sjc8-radius01 
+        - no radius server sjc8-radius02 
+        - no radius server radius
+      register: output
+
+    - name: Add RADIUS server nyc128-radius01
+      ios_config:
+        parents: radius server nyc128-radius01
+        lines:
+          - address ipv4 100.125.140.30 auth-port 1812 acct-port 1813
+          - key 0 wework@rad!
+
+    - name: Add RADIUS server sjc8-radius02
+      ios_config:
+        parents: radius server sjc8-radius02
+        lines:
+          - address ipv4 100.123.12.31 auth-port 1812 acct-port 1813
+          - key 0 wework@rad!
+
+    - name: Apply new AAA config
+      ios_config:
+        lines:
+          - aaa authentication login default group radius local
+          - aaa authorization exec default group radius local
+
+    - name: Save running-config to startup-config when config is modified
+      ios_config:
+        save_when: modified

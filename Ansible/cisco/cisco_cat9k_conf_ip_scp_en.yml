@@ -1,6 +1,10 @@
 ---
-- name: Add SCP server enable command to Cisco Cat9k switches
-  hosts: Cisco
+## Configure Cisco CAT9K switches to receive SCP transfers initiated by a
+# server.  Global configuration command "ip scp server enable" must be 
+# added to the config.
+
+- name: Add SCP server enable command to Cisco CAT9K switches
+  hosts: cisco_cat9k 
   gather_facts: False
   connection: network_cli
 
@@ -9,12 +13,7 @@
       ios_config:
         lines:
         - ip scp server enable 
-      register: output
 
     - name: Save running-config to startup-config when config is modified
       ios_config:
         save_when: modified
-
-    - name: print output
-      debug:
-        var: output

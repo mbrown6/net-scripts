@@ -1,0 +1,15 @@
+---
+- name: Cisco CAT9K switch show version output
+  hosts: cisco_cat9k
+  connection: network_cli 
+  gather_facts: False
+
+  tasks:
+    - name: Run operational command show version on remote devices
+      cisco.ios.ios_command:
+        commands: show version 
+ 
+      register: print_output
+ 
+    - debug: var=print_output
+ 

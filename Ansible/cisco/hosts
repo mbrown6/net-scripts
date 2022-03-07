@@ -2,5 +2,3 @@
 
 [cisco_cat9k]
 nyc144-3a ansible_host=10.213.202.30
-
-[var]

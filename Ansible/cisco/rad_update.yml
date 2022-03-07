@@ -1,8 +1,8 @@
 ---
 - name: Update RADIUS server configuration 
-  hosts: Cisco
+  hosts: cisco_cat9k
   gather_facts: False
-    #  connection: network_cli
+  connection: network_cli
 
   tasks:
     - name: Delete AAA and RADIUS configuration

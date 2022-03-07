@@ -2,7 +2,7 @@
 - name: Add SCP server enable command to Cisco Cat9k switches
   hosts: Cisco
   gather_facts: False
-    #  connection: network_cli
+  connection: network_cli
 
   tasks:
     - name: Add SCP command and save running-config to startup-config

@@ -1,8 +1,8 @@
 ---
 - name: Download Cisco RADIUS config from net-fs-usc.weworkers.io 
-  hosts: Cisco
+  hosts: cisco_cat9k
   gather_facts: False
-    #connection: network_cli
+  connection: network_cli
 
   tasks:
     - name: TFTP download RADIUS file from regional server 

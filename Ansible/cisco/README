@@ -1,0 +1,2 @@
+## group_vars/all.yml is encrypted with ansible-vault.  Add the switch
+## --ask-vault-pass to the end of the ansible-playbook command.

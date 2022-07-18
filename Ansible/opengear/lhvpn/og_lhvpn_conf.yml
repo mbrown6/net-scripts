@@ -1,0 +1,42 @@
+---
+## Opengear Terminal Server remote node Lighthouse VPN (lhvpn) interface
+## configuration playbook. Requires one CLI command (lhvpn-callhome) to configure
+## OG remote nodes for Opengear Lighthouse Central Management Server enrollment.
+## Once remote nodes are configured, be sure to approve the pending nodes in the
+## Lighthouse NODE ENROLLMENT section.
+
+- hosts: opengears
+  gather_facts: False
+  
+  tasks:
+
+    - name: Checking interface parameters with ifconfig utility 
+      raw: ifconfig
+      register: output
+
+    - name: Checking if Lighthouse VPN interface is configured
+      debug:
+        msg: 
+          - "Lighthouse VPN (lhvpn) interface is configured on {{ inventory_hostname }}"
+          - "Skipping lhvpn interface configuration task"
+      when: output is search("lhvpn")
+
+    - name: Identifying candidate Opengear devices for Lighthouse enrollment
+      debug:
+        msg: 
+          - "Lighthouse VPN (lhvpn) interface is NOT configured on {{ inventory_hostname }}"
+          - "Configuring Lighthouse VPN (lhvpn) interface.  Approve pending node {{ inventory_hostname }} on Lighthouse Server"
+      when: output is not search("lhvpn")
+        
+    - name: If Lighthouse VPN (lhvpn) interface is not configured, then configure interface
+      become: yes
+      raw: lhvpn-callhome -a "{{ oglh_addr }}" -p "{{ oglh_port }}" -s "{{ enroll_token }}" -m "{{ bun_name }}"
+      when: output is not search("lhvpn")
+
+    - name: Checking new lhvpn interface configuration 
+      raw: ifconfig | grep -A5 lhvpn
+      register: lhvpn_output
+
+    - name: Return lhvpn interface configuration
+      debug:
+        msg: "{{ lhvpn_output.stdout_lines }}"

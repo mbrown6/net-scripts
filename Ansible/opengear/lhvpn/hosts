@@ -1,0 +1,13 @@
+[opengears]
+#sao5-console ansible_host=179.191.124.14
+#sao7-console ansible_host=179.191.69.142
+#sao8-console ansible_host=179.191.73.5
+sao9-console ansible_host=179.191.82.150
+sao10-console ansible_host=177.92.72.246
+sao11-console ansible_host=179.191.72.222 oglh_addr=lighthouse.weworkers.io oglh_port=8443 enroll_token=amer-sao bun_name=sao-nodes
+sao12-console ansible_host=177.92.72.230 oglh_addr=lighthouse.weworkers.io oglh_port=8443 enroll_token=amer-sao bun_name=sao-nodes
+sao13-console ansible_host=177.92.72.238 oglh_addr=lighthouse.weworkers.io oglh_port=8443 enroll_token=amer-sao bun_name=sao-nodes
+sao16-console ansible_host=179.191.106.166 oglh_addr=lighthouse.weworkers.io oglh_port=8443 enroll_token=amer-sao bun_name=sao-nodes
+
+[all:vars]
+ansible_python_interpreter=/usr/local/bin/python

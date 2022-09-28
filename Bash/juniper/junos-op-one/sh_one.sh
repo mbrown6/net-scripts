@@ -26,6 +26,6 @@ for device in ${devices}; do
 
     echo "Connecting to device: ${device}"
     sshpass -p$passWord ssh -o StrictHostKeyChecking=no -o ConnectTimeout=4 $userName@${device} ${command1}
-    echo "============================================================="
+    echo "====================================================================================================="
 
 done
